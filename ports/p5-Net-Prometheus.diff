@@ -1,0 +1,90 @@
+Index: databases/p5-Net-Prometheus/Makefile
+===================================================================
+RCS file: databases/p5-Net-Prometheus/Makefile
+diff -N databases/p5-Net-Prometheus/Makefile
+--- /dev/null	1 Jan 1970 00:00:00 -0000
++++ databases/p5-Net-Prometheus/Makefile	13 Aug 2020 00:12:44 -0000
+@@ -0,0 +1,25 @@
++# $OpenBSD$
++
++COMMENT =	export monitoring metrics for prometheus
++
++DISTNAME =	Net-Prometheus-0.11
++CATEGORIES =	databases
++
++MAINTAINER =	Sven <svenfalempin@gmail.com>
++
++# Perl
++PERMIT_PACKAGE =	Yes
++
++MODULES =		cpan
++
++CONFIGURE_STYLE =	modbuild tiny
++
++BUILD_DEPENDS+=	devel/p5-Test-Fatal \
++                devel/p5-Ref-Util \
++                devel/p5-Struct-Dumb
++TEST_DEPENDS += devel/p5-Test-Fatal
++
++RUN_DEPENDS += devel/p5-Ref-Util \
++               devel/p5-Struct-Dumb
++
++.include <bsd.port.mk>
+Index: databases/p5-Net-Prometheus/distinfo
+===================================================================
+RCS file: databases/p5-Net-Prometheus/distinfo
+diff -N databases/p5-Net-Prometheus/distinfo
+--- /dev/null	1 Jan 1970 00:00:00 -0000
++++ databases/p5-Net-Prometheus/distinfo	13 Aug 2020 00:12:44 -0000
+@@ -0,0 +1,2 @@
++SHA256 (Net-Prometheus-0.11.tar.gz) = IvgJ4njq1Rk2rVOVgGUbTOXLyRwgnkpXesgjg82fcmo=
++SIZE (Net-Prometheus-0.11.tar.gz) = 39243
+Index: databases/p5-Net-Prometheus/pkg/DESCR
+===================================================================
+RCS file: databases/p5-Net-Prometheus/pkg/DESCR
+diff -N databases/p5-Net-Prometheus/pkg/DESCR
+--- /dev/null	1 Jan 1970 00:00:00 -0000
++++ databases/p5-Net-Prometheus/pkg/DESCR	13 Aug 2020 00:12:44 -0000
+@@ -0,0 +1,3 @@
++This module provides the ability for a program to
++collect monitoring metrics and export them to the
++prometheus.io monitoring server.
+Index: databases/p5-Net-Prometheus/pkg/PLIST
+===================================================================
+RCS file: databases/p5-Net-Prometheus/pkg/PLIST
+diff -N databases/p5-Net-Prometheus/pkg/PLIST
+--- /dev/null	1 Jan 1970 00:00:00 -0000
++++ databases/p5-Net-Prometheus/pkg/PLIST	13 Aug 2020 00:12:44 -0000
+@@ -0,0 +1,32 @@
++@comment $OpenBSD$
++${P5ARCH}/
++${P5ARCH}/auto/
++${P5ARCH}/auto/Net/
++${P5ARCH}/auto/Net/Prometheus/
++${P5ARCH}/auto/Net/Prometheus/PerlCollector/
++${P5ARCH}/auto/Net/Prometheus/PerlCollector/PerlCollector.bs
++${P5ARCH}/auto/Net/Prometheus/PerlCollector/PerlCollector.so
++${P5ARCH}/Net/
++${P5ARCH}/Net/Prometheus.pm
++${P5ARCH}/Net/Prometheus/
++${P5ARCH}/Net/Prometheus/Counter.pm
++${P5ARCH}/Net/Prometheus/Gauge.pm
++${P5ARCH}/Net/Prometheus/Histogram.pm
++${P5ARCH}/Net/Prometheus/Metric.pm
++${P5ARCH}/Net/Prometheus/PerlCollector.pm
++${P5ARCH}/Net/Prometheus/ProcessCollector.pm
++${P5ARCH}/Net/Prometheus/Registry.pm
++${P5ARCH}/Net/Prometheus/Summary.pm
++${P5ARCH}/Net/Prometheus/Types.pm
++${P5ARCH}/Net/Prometheus/ProcessCollector/linux.pm
++@man man/man3p/Net::Prometheus.3p
++@man man/man3p/Net::Prometheus::Counter.3p
++@man man/man3p/Net::Prometheus::Gauge.3p
++@man man/man3p/Net::Prometheus::Histogram.3p
++@man man/man3p/Net::Prometheus::Metric.3p
++@man man/man3p/Net::Prometheus::PerlCollector.3p
++@man man/man3p/Net::Prometheus::ProcessCollector.3p
++@man man/man3p/Net::Prometheus::ProcessCollector::linux.3p
++@man man/man3p/Net::Prometheus::Registry.3p
++@man man/man3p/Net::Prometheus::Summary.3p
++@man man/man3p/Net::Prometheus::Types.3p

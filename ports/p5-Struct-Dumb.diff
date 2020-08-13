@@ -1,0 +1,65 @@
+Index: devel/p5-Struct-Dumb/Makefile
+===================================================================
+RCS file: devel/p5-Struct-Dumb/Makefile
+diff -N devel/p5-Struct-Dumb/Makefile
+--- /dev/null	1 Jan 1970 00:00:00 -0000
++++ devel/p5-Struct-Dumb/Makefile	13 Aug 2020 00:03:52 -0000
+@@ -0,0 +1,24 @@
++# $OpenBSD$
++
++COMMENT=	make simple lightweight record-like structures
++
++MODULES=	cpan
++PKG_ARCH=	*
++DISTNAME=	Struct-Dumb-0.12
++CATEGORIES=	devel
++
++MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=../by-authors/id/P/PE/PEVANS/}
++
++MAINTAINER=	Sven <svenfalempin@gmail.com>
++
++# Artistic License
++PERMIT_PACKAGE=	Yes
++
++CONFIGURE_STYLE=	modbuild tiny
++
++BUILD_DEPENDS+=		devel/p5-Test-Fatal
++TEST_DEPENDS+=		devel/p5-Test-Fatal
++
++
++.include <bsd.port.mk>
++
+Index: devel/p5-Struct-Dumb/distinfo
+===================================================================
+RCS file: devel/p5-Struct-Dumb/distinfo
+diff -N devel/p5-Struct-Dumb/distinfo
+--- /dev/null	1 Jan 1970 00:00:00 -0000
++++ devel/p5-Struct-Dumb/distinfo	13 Aug 2020 00:03:52 -0000
+@@ -0,0 +1,2 @@
++SHA256 (Struct-Dumb-0.12.tar.gz) = Us5wxDPmlirRwg6eKXpTkeC3SkRSD7zi5IL1RONlf3M=
++SIZE (Struct-Dumb-0.12.tar.gz) = 17513
+Index: devel/p5-Struct-Dumb/pkg/DESCR
+===================================================================
+RCS file: devel/p5-Struct-Dumb/pkg/DESCR
+diff -N devel/p5-Struct-Dumb/pkg/DESCR
+--- /dev/null	1 Jan 1970 00:00:00 -0000
++++ devel/p5-Struct-Dumb/pkg/DESCR	13 Aug 2020 00:03:52 -0000
+@@ -0,0 +1,7 @@
++Struct::Dumb creates record-like structure types,
++similar to the struct keyword in C, C++ or C#,
++or Record in Pascal.
++An invocation of this module will create a construction
++function which returns new object references with the
++given field values. These references all respond to
++lvalue methods that access or modify the values stored.
+Index: devel/p5-Struct-Dumb/pkg/PLIST
+===================================================================
+RCS file: devel/p5-Struct-Dumb/pkg/PLIST
+diff -N devel/p5-Struct-Dumb/pkg/PLIST
+--- /dev/null	1 Jan 1970 00:00:00 -0000
++++ devel/p5-Struct-Dumb/pkg/PLIST	13 Aug 2020 00:03:52 -0000
+@@ -0,0 +1,4 @@
++@comment $OpenBSD$
++${P5SITE}/Struct/
++${P5SITE}/Struct/Dumb.pm
++@man man/man3p/Struct::Dumb.3p
